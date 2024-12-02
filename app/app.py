@@ -26,7 +26,7 @@ This application showcases how these two languages can be integrated for seamles
 """)
 
 # Imagen decorativa
-st.image("https://www.r-bloggers.com/wp-content/uploads/2020/04/R-vs-Python.jpg", caption="Python & R for Data Science", use_column_width=True)
+st.write('Python & R for Data Science')
 
 # Pie de página
 st.write("---")
@@ -43,6 +43,8 @@ R packages used:
 - `ggplot2`
 - `cowplot`
 ''')
+
+
 
 # Subtítulo: 1. Printing text in R
 st.subheader('1. Printing text in R')

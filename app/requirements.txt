@@ -3,5 +3,4 @@ rpy2
 pandas
 plotly
 seaborn
-subprocess
 pillow

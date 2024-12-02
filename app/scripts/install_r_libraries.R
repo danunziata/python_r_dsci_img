@@ -1,5 +1,5 @@
 # Lista de paquetes necesarios
-required_packages <- c("glmnet", "caret", "umap", "plotly", "limma", "edgeR", "data.table", "tidyverse")
+required_packages <- c("glmnet", "caret", "umap", "plotly", "limma", "edgeR", "data.table", "tidyverse", "ggplot2", "cowplot", "gridExtra")
 
 # Función para instalar paquetes si no están ya instalados
 install_if_missing <- function(packages) {
