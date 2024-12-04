@@ -45,20 +45,20 @@ RUN pip install --upgrade pip setuptools wheel
 WORKDIR /app
 
 # Copiar los archivos de requisitos de Python y R
-COPY app/requirements.txt /app/requirements.txt
-COPY app/scripts/install_r_libraries.R /app/scripts/install_r_libraries.R
+COPY requirements.txt requirements.txt
+COPY install_r_libraries.R install_r_libraries.R
 
 # Instalar las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Instalar las librerías de R
-RUN Rscript /app/scripts/install_r_libraries.R
+RUN Rscript install_r_libraries.R
 
 # Copiar la aplicación básica de Streamlit
-COPY app/app.py /app/app.py
+COPY app/* /app/
 
 # Exponer el puerto para Streamlit
 EXPOSE 8501
 
 # Comando por defecto para ejecutar Streamlit
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.port=8501"]
