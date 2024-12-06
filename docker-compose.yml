@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+    container_name: streamlit_r_app  # Nombre del contenedor
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    ports:
+      - "8501:8501"  # Mapea el puerto 8501 del host al contenedor
+    command: streamlit run app.py  # Cambia esto según el script que quieras ejecutar

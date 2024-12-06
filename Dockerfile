@@ -55,7 +55,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN Rscript install_r_libraries.R
 
 # Copiar la aplicación básica de Streamlit
-COPY app/* /app/
+COPY ./app/* /app
 
 # Exponer el puerto para Streamlit
 EXPOSE 8501
