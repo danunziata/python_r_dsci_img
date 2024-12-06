@@ -28,7 +28,7 @@ with col2:
     try:
         # Ejecutar el script R
         result = subprocess.run(
-            ["Rscript", "helloworld.R"],  # Asegúrate de que el archivo exista
+            ["Rscript", "R/helloworld.R"],  # Asegúrate de que el archivo exista
             capture_output=True,
             text=True
         )

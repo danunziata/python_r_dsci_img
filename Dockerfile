@@ -45,8 +45,8 @@ RUN pip install --upgrade pip setuptools wheel
 WORKDIR /app
 
 # Copiar los archivos de requisitos de Python y R
-COPY requirements.txt requirements.txt
-COPY install_r_libraries.R install_r_libraries.R
+COPY ./app/requirements.txt requirements.txt
+COPY ./app/install_r_libraries.R install_r_libraries.R
 
 # Instalar las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
@@ -55,7 +55,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN Rscript install_r_libraries.R
 
 # Copiar la aplicación básica de Streamlit
-COPY ./app/* /app
+COPY ./app /app
 
 # Exponer el puerto para Streamlit
 EXPOSE 8501
